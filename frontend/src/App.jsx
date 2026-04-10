@@ -47,6 +47,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  
+  // --- Bonus: Filter State ---
+  const [filter, setFilter] = useState('all'); 
 
   const fetchTasks = async () => {
     setLoading(true);
@@ -95,20 +98,37 @@ function App() {
 
   useEffect(() => { fetchTasks(); }, []);
 
+  // --- Bonus: Logic to filter tasks ---
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'completed') return task.completed;
+    if (filter === 'pending') return !task.completed;
+    return true; // for 'all'
+  });
+
   return (
     <div className="container">
       <h1>Task Manager</h1>
       <TaskForm onAdd={addTask} />
+
+      {/* --- Bonus: Filter Buttons UI --- */}
+      <div className="filter-buttons" style={{ display: 'flex', gap: '5px', marginBottom: '15px', justifyContent: 'center' }}>
+        <button onClick={() => setFilter('all')} style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ddd', background: filter === 'all' ? '#6366f1' : '#fff', color: filter === 'all' ? '#fff' : '#000', cursor: 'pointer' }}>All</button>
+        <button onClick={() => setFilter('pending')} style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ddd', background: filter === 'pending' ? '#6366f1' : '#fff', color: filter === 'pending' ? '#fff' : '#000', cursor: 'pointer' }}>Pending</button>
+        <button onClick={() => setFilter('completed')} style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ddd', background: filter === 'completed' ? '#6366f1' : '#fff', color: filter === 'completed' ? '#fff' : '#000', cursor: 'pointer' }}>Completed</button>
+      </div>
       
       {loading && <p className="loading">Loading...</p>}
       {error && <p className="error">{error}</p>}
       
       <ul className="task-list">
-        {tasks.map(task => (
+        {filteredTasks.map(task => (
           <TaskItem key={task.id} task={task} onToggle={toggleTask} onDelete={deleteTask} />
         ))}
       </ul>
-      {!loading && tasks.length === 0 && !error && <p className="empty-msg">No tasks found. Add your first task!</p>}
+      
+      {!loading && filteredTasks.length === 0 && !error && (
+        <p className="empty-msg">No tasks found for "{filter}" filter.</p>
+      )}
     </div>
   );
 }
