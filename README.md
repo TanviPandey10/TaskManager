@@ -59,7 +59,7 @@ npm run dev
 The frontend will run on http://localhost:5174 (or 5173)
 
 📂 Project Structure
-Plaintext
+
 TaskManager/
 ├── backend/
 │   ├── main.py          # FastAPI application & routes
@@ -71,6 +71,7 @@ TaskManager/
 │   │   └── App.css      # Modern styling
 │   └── package.json
 └── README.md
+
 💡 Technical Decisions
 Data Persistence (JSON File Storage): To enhance user experience, I upgraded the storage from volatile in-memory lists to persistent JSON file storage. This ensures that data is preserved even after server restarts or page refreshes.
 
