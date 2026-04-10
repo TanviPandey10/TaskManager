@@ -1,0 +1,128 @@
+ :root {
+  --primary: #6366f1;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --danger: #ef4444;
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 480px;
+  margin: 60px auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h1 {
+  text-align: center;
+  color: var(--text);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.task-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.add-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.add-btn:hover { opacity: 0.9; }
+.add-btn:active { transform: scale(0.95); }
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #f3f4f6;
+}
+
+.task-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.task-item span {
+  flex: 1;
+  margin: 0 15px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--text-muted) !important;
+  opacity: 0.6;
+}
+
+.delete-btn {
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  color: var(--danger);
+  background: #fee2e2;
+}
+
+.loading { text-align: center; color: var(--primary); font-weight: 600; }
+.error { 
+  background: #fef2f2; 
+  color: var(--danger); 
+  padding: 15px; 
+  border-radius: 12px; 
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: 1px solid #fee2e2;
+}
+.empty-msg { text-align: center; color: var(--text-muted); margin-top: 20px; }
