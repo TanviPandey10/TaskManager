@@ -1,5 +1,6 @@
 📝 Modern Task Manager (Full-Stack)
 A sleek, responsive, and functional Task Management application built with FastAPI (Backend) and React (Frontend). This project was developed as part of a Full-Stack Development Internship assignment.
+
 📺 Project Demo
  https://www.loom.com/share/32c14e4e8de14939a907347b968d2d78
 ✨ Features
