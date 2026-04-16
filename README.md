@@ -3,7 +3,7 @@ A sleek, responsive, and functional Task Management application built with FastA
 
 📺 Project Demo
  https://www.loom.com/share/32c14e4e8de14939a907347b968d2d78
-✨ Features
+ Features
 Core Functionalities
 RESTful API: Built with FastAPI for high performance.
 
