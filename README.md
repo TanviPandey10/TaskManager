@@ -13,7 +13,7 @@ Modern UI: Minimalist and clean design inspired by modern aesthetics.
 
 Error Handling: Graceful handling of backend connection issues and empty states.
 
-🌟 Bonus Features Implemented
+ Bonus Features Implemented
 Data Persistence: Tasks are saved in a tasks.json file on the server. Data remains intact even after refreshing the page or restarting the server.
 
 Advanced Filtering: Users can filter tasks by All, Pending, and Completed status.
