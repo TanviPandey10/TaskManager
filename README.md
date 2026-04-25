@@ -80,4 +80,4 @@ CORS Configuration: Implemented Cross-Origin Resource Sharing (CORS) middleware 
 
 Modular Component Architecture: Optimized the React frontend by breaking down the UI into reusable sub-components (TaskItem, TaskForm). This follows the DRY (Don't Repeat Yourself) principle and improves code maintainability.
 
-State-Driven UI: Utilized React hooks (useState, useEffect) to manage real-time task filtering and loading states, providing a smooth and interactive user interface...
+State-Driven UI: Utilized React hooks (useState, useEffect) to manage real-time task filtering and loading states, providing a smooth and interactive user interface.
